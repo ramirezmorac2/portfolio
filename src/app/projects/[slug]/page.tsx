@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import ProjectCarousel from "@/components/ProjectCarousel";
 import { getProjectBySlug, projects } from "@/lib/projects";
-import { siteConfig, withBasePath } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -21,7 +21,20 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
 
-  const cover = project.images[0];
+  // Next.js doesn't merge `openGraph`/`twitter` across route segments: once
+  // this page defines its own object, it fully replaces the parent's
+  // (including the image inherited from the root opengraph-image.tsx file
+  // convention). So the generic OG image must be referenced explicitly here
+  // to reuse it instead of falling back to no image at all.
+  // Root-relative path, resolved against `metadataBase` (which already
+  // includes the GitHub Pages basePath) — do NOT wrap with withBasePath()
+  // here or the basePath gets duplicated in the final URL.
+  const genericImage = {
+    url: "/opengraph-image",
+    width: 1200,
+    height: 630,
+    alt: `${siteConfig.name} — ${siteConfig.role}`,
+  };
 
   return {
     title: project.title,
@@ -34,13 +47,13 @@ export async function generateMetadata({
       description: project.summary,
       type: "article",
       url: `${siteConfig.siteUrl}/projects/${project.slug}`,
-      images: cover ? [{ url: withBasePath(cover.src) }] : undefined,
+      images: [genericImage],
     },
     twitter: {
       card: "summary_large_image",
       title: project.title,
       description: project.summary,
-      images: cover ? [withBasePath(cover.src)] : undefined,
+      images: [genericImage.url],
     },
   };
 }
