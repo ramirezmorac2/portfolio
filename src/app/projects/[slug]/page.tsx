@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import { getProjectBySlug, projects } from "@/lib/projects";
 import { siteConfig, withBasePath } from "@/lib/site";
 
@@ -95,27 +95,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         )}
       </header>
 
-      {project.images.length > 0 && (
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {project.images.map((image, index) => (
-            <div
-              key={image.src}
-              className={`relative aspect-video overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 ${
-                index === 0 ? "sm:col-span-2" : ""
-              }`}
-            >
-              <Image
-                src={withBasePath(image.src)}
-                alt={image.alt}
-                fill
-                sizes="(min-width: 640px) 800px, 100vw"
-                className="object-cover"
-                priority={index === 0}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+      <ProjectCarousel images={project.images} />
 
       <section className="mt-12">
         <h2 className="text-xl font-semibold tracking-tight">

@@ -7,16 +7,27 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-5xl px-6 pt-20 pb-16 sm:pt-28">
-        <p className="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
+        <p
+          className="animate-fade-in-up mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-400"
+        >
           {siteConfig.role}
         </p>
-        <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+        <h1
+          className="animate-fade-in-up max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl"
+          style={{ animationDelay: "0.1s" }}
+        >
           Hi, I&apos;m {siteConfig.name}.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        <p
+          className="animate-fade-in-up mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300"
+          style={{ animationDelay: "0.2s" }}
+        >
           {siteConfig.bio}
         </p>
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div
+          className="animate-fade-in-up mt-8 flex flex-wrap gap-4"
+          style={{ animationDelay: "0.3s" }}
+        >
           <Link
             href="/projects"
             className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600 dark:bg-white dark:text-slate-900 dark:hover:bg-indigo-400"
@@ -43,8 +54,14 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projects.map((project, i) => (
+            <div
+              key={project.slug}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${0.1 * i}s` }}
+            >
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
       </section>
