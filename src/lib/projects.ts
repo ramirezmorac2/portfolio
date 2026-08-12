@@ -113,6 +113,77 @@ export const projects: Project[] = [
     ],
     timeline: "May 2026 – present",
   },
+  {
+    slug: "sessionrunner",
+    title: "SessionRunner — AI Mentor Platform",
+    tagline:
+      "An AI-powered learning platform with tutoring chat and adaptive quizzes.",
+    summary:
+      "SessionRunner is a learning platform for higher education. Students " +
+      "learn through chat with an AI tutor and adaptive quizzes; teachers " +
+      "create courses and upload material; admins manage users, roles, and " +
+      "platform branding.",
+    problem:
+      "Course material is often static and hard to search, and grading " +
+      "open-ended answers takes time. SessionRunner turns each course's " +
+      "own documents into a source the AI tutor can reference directly, " +
+      "and automates quiz grading so teachers can focus on teaching.",
+    highlights: [
+      "AI chat tutor that answers using the course's own PDFs as context (RAG).",
+      "Adaptive quizzes with AI grading (correct/partial/incorrect) and image support.",
+      "Role-based access for students, teachers, and admins, with a demo mode with usage limits.",
+      "Email invitations with role assignment and per-course file management.",
+    ],
+    role: [
+      "Took over an existing codebase and worked through specs to fix broken features: chat history persistence, silent profile-save failures, and the invitation flow.",
+      "Built the RAG chat pipeline and AI quiz grading as Supabase Edge Functions, keeping API keys and AI calls off the client.",
+      "Enforced role-based access with Postgres Row Level Security and JWT checks on every Edge Function.",
+    ],
+    stack: [
+      { label: "Frontend", items: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "TanStack Query", "React Hook Form", "Zod"] },
+      { label: "Backend", items: ["Supabase (PostgreSQL)", "Row Level Security", "Auth", "Storage", "Edge Functions (Deno)"] },
+      { label: "AI", items: ["Google Gemini 2.0 Flash"] },
+    ],
+    images: [
+      { src: "/projects/sessionrunner/sessionrunner-1.png", alt: "SessionRunner AI tutor chat interface" },
+      { src: "/projects/sessionrunner/sessionrunner-2.png", alt: "SessionRunner course and quiz management screen" },
+      { src: "/projects/sessionrunner/sessionrunner-3.png", alt: "SessionRunner platform overview" },
+    ],
+  },
+  {
+    slug: "coffeeurbantech",
+    title: "Coffee Urban Tech — Business Management App",
+    tagline:
+      "A mobile app for managing inventory, sales, and purchases for a coffee business.",
+    summary:
+      "Coffee Urban Tech is a mobile app (Android/iOS) built as a team " +
+      "university project to manage a coffee shop's daily operations: " +
+      "inventory, sales, purchases, users, and reports, all from one app.",
+    problem:
+      "Small businesses often juggle inventory, sales, and purchasing " +
+      "across separate tools or spreadsheets. Coffee Urban Tech brings " +
+      "those workflows into a single mobile app with one shared source " +
+      "of truth.",
+    highlights: [
+      "Inventory, sales, and purchases modules with a shared dashboard.",
+      "User authentication and management.",
+      "Report generation and export/sharing from the app.",
+    ],
+    role: [
+      "Set up the initial project and the Expo Router file-based navigation used across the app.",
+      "Built the Dashboard and Inventory screens, and the Sales screen.",
+      "Built the report generation module and standardized code style (Prettier) across the repo.",
+    ],
+    stack: [
+      { label: "Frontend", items: ["React Native", "Expo", "Expo Router", "TypeScript", "NativeWind"] },
+      { label: "Backend", items: ["Firebase (Firestore, Auth)"] },
+    ],
+    images: [
+      { src: "/projects/coffeeurbantech/coffeeurbantech-1.jpg", alt: "Coffee Urban Tech dashboard screen" },
+      { src: "/projects/coffeeurbantech/coffeeurbantech-2.jpg", alt: "Coffee Urban Tech inventory screen" },
+      { src: "/projects/coffeeurbantech/coffeeurbantech-3.jpg", alt: "Coffee Urban Tech sales screen" },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {

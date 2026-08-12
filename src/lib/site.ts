@@ -13,15 +13,16 @@ export const siteConfig = {
   role: "Software Developer",
   siteUrl: "https://ramirezmorac2.github.io/portfolio",
   bio:
-    "Full-stack Software Developer with experience building real products " +
-    "end to end: from AI assistants connected to enterprise data sources, " +
-    "to SaaS platforms for review management with smart automation. " +
-    "Comfortable working across both frontend (React, TypeScript) and " +
-    "backend (Python, SQL and NoSQL databases), with a focus on building " +
-    "polished interfaces and systems that hold up in production.",
+    "Software Developer with experience building real products end to " +
+    "end, across web and mobile: from AI assistants connected to " +
+    "enterprise data sources, to SaaS platforms for review management " +
+    "with smart automation, to mobile apps for business management. " +
+    "Comfortable owning a feature from interface design through backend " +
+    "architecture and infrastructure, working across React, React " +
+    "Native, TypeScript, Python, and SQL/NoSQL databases.",
   shortBio:
-    "I build full-stack web products, from interface design to backend " +
-    "architecture.",
+    "I build software end to end, across web and mobile, from interface " +
+    "design to backend architecture.",
   email: "ramirezmorac2@gmail.com",
   github: {
     username: "ramirezmorac2",
