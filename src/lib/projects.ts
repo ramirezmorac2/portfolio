@@ -66,6 +66,7 @@ export const projects: Project[] = [
       { label: "Testing", items: ["Jest", "Cypress", "Pytest"] },
     ],
     images: [
+      { src: "/projects/freddaid/freddaid-1.png", alt: "FreddAid AI chat view showing a conversation with cited source documents" },
       { src: "/projects/freddaid/freddaid-2.png", alt: "FreddAid document library (Vault) panel" },
       { src: "/projects/freddaid/freddaid-3.png", alt: "Team and organization management screen in FreddAid" },
       { src: "/projects/freddaid/freddaid-5.png", alt: "Overview of the FreddAid dashboard with platform modules" },
@@ -110,6 +111,7 @@ export const projects: Project[] = [
     images: [
       { src: "/projects/vibewaggler/vibewaggler-1.png", alt: "VibeWaggler dashboard showing the centralized review inbox" },
       { src: "/projects/vibewaggler/vibewaggler-2.png", alt: "Metrics and sentiment analysis panel in VibeWaggler" },
+      { src: "/projects/vibewaggler/vibewaggler-3.png", alt: "VibeWaggler AI-drafted reply and quality check view" },
     ],
     timeline: "May 2026 – present",
   },
@@ -148,6 +150,7 @@ export const projects: Project[] = [
       { src: "/projects/sessionrunner/sessionrunner-1.png", alt: "SessionRunner AI tutor chat interface" },
       { src: "/projects/sessionrunner/sessionrunner-2.png", alt: "SessionRunner course and quiz management screen" },
       { src: "/projects/sessionrunner/sessionrunner-3.png", alt: "SessionRunner platform overview" },
+      { src: "/projects/sessionrunner/sessionrunner-4.png", alt: "SessionRunner quiz and grading view" },
     ],
   },
   {
