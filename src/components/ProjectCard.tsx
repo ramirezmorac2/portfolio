@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           alt={cover.alt}
           fill
           sizes="(min-width: 768px) 480px, 100vw"
-          className="object-cover transition duration-300 group-hover:scale-105"
+          className="object-contain transition duration-300 group-hover:scale-[1.02]"
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
